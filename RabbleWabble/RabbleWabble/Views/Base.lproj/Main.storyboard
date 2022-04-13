@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="42i-88-hpI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="42i-88-hpI">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -72,7 +72,13 @@
                             <constraint firstItem="lcq-0s-SvN" firstAttribute="top" secondItem="Cfm-ba-9V6" secondAttribute="top" id="uUe-QC-v7K"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Question Group" id="Sb6-Km-tLA"/>
+                    <navigationItem key="navigationItem" title="Select Question Group" id="Sb6-Km-tLA">
+                        <barButtonItem key="leftBarButtonItem" image="ic_settings" id="JGm-G2-joT">
+                            <connections>
+                                <segue destination="ghp-O2-IXl" kind="show" id="UrG-J2-G61"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="lcq-0s-SvN" id="TmE-I4-VFA"/>
                     </connections>
@@ -80,6 +86,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Jk-5f-kXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="232.80000000000001" y="124.58770614692655"/>
+        </scene>
+        <!--App Settings-->
+        <scene sceneID="3Dl-9M-8AE">
+            <objects>
+                <tableViewController title="App Settings" id="ghp-O2-IXl" customClass="AppSettingsViewController" customModule="RabbleWabble" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="yvd-Lj-WwW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="ghp-O2-IXl" id="ZBV-iB-40E"/>
+                            <outlet property="delegate" destination="ghp-O2-IXl" id="rOl-QP-p1s"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="e84-GD-yZI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="98B-WB-dUq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="816"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -201,6 +226,7 @@
     <resources>
         <image name="ic_circle_check" width="80" height="80"/>
         <image name="ic_circle_x" width="80" height="80"/>
+        <image name="ic_settings" width="26" height="26"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
